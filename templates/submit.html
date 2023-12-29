@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraped Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scraped Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Citation</th>
+                <th>PMID</th>
+                <th>Free</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in scraped_data %}
+                <tr>
+                    <td>{{ item['title'] }}</td>
+                    <td>{{ item['author'] }}</td>
+                    <td>{{ item['citation'] }}</td>
+                    <td>{{ item['pmid'] }}</td>
+                    <td>{{ item['free'] }}</td>
+                    <td>{{ item['review'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
