@@ -1,3 +1,5 @@
+import requests
+import configparser
 import subprocess
 from flask import Flask, render_template, request
 import os
@@ -50,5 +52,5 @@ def submit():
         return f"Error occurred"
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.4', port=80, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)
 
